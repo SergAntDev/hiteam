@@ -1,0 +1,6 @@
+{
+	"appId": "ionic.keepteam",
+	"appName": "keepteam",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
