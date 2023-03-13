@@ -19,7 +19,7 @@ const ProfileDetails: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar className="ion-text-start">
-          <IonButtons slot="start">
+          <IonButtons slot="start" className="ion-padding-start">
             <IonBackButton
               defaultHref="/app/users"
               text=""

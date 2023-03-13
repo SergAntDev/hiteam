@@ -9,12 +9,17 @@ import {
   IonBadge,
   IonIcon,
   IonText,
+  useIonModal,
 } from "@ionic/react";
+import { OverlayEventDetail } from "@ionic/react/dist/types/components/react-component-lib/interfaces";
 import { homeOutline } from "ionicons/icons";
 import { format } from "date-fns";
 import { ru } from "date-fns/esm/locale";
 
+import RequestDetailsModal from "../../components/Modals/Requests/Details";
+
 import "./main.css";
+import { useState } from "react";
 
 interface ICurrentDate {
   dayOfweek: string;
@@ -23,6 +28,8 @@ interface ICurrentDate {
 type voidFunc = () => ICurrentDate;
 
 const Home: React.FC = () => {
+  const [modalType, setModalType] = useState<number>(1);
+
   const prepareCurrentDate: voidFunc = () => {
     const currentDate = new Date();
     const currentDateFormat = format(currentDate, "EEEE,d MMMM", {
@@ -34,6 +41,22 @@ const Home: React.FC = () => {
       dayOfweek: slicedDate[0],
       monthWithDate: slicedDate[1],
     };
+  };
+
+  const [present, dismiss] = useIonModal(RequestDetailsModal, {
+    onDismiss: (data: string, role: string) => dismiss(data, role),
+    type: modalType
+  });
+
+  const openModal = (type: number) => {
+    setModalType(type);
+    present({
+      onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => {
+        if (ev.detail.role === "confirm") {
+          console.log(ev.detail.data);
+        }
+      },
+    });
   };
 
   return (
@@ -65,7 +88,7 @@ const Home: React.FC = () => {
           <IonText color="medium" className="ion-text-uppercase">
             <p className="ion-padding-start">Ожидают одобрения</p>
           </IonText>
-          <IonItem lines="full">
+          <IonItem lines="full" button detail={false} onClick={() => openModal(1)}>
             <IonLabel>
               <div className="inline-container">
                 <IonAvatar>
@@ -84,7 +107,7 @@ const Home: React.FC = () => {
               </div>
             </IonLabel>
           </IonItem>
-          <IonItem lines="full">
+          <IonItem lines="full" button detail={false} onClick={() => openModal(1)}>
             <IonLabel>
               <div className="inline-container">
                 <IonAvatar>
@@ -104,7 +127,7 @@ const Home: React.FC = () => {
               <p>Плохо себя чувствую. Температура и кашель и насморк</p>
             </IonLabel>
           </IonItem>
-          <IonItem lines="full">
+          <IonItem lines="full" button detail={false} onClick={() => openModal(1)}>
             <IonLabel>
               <div className="inline-container">
                 <IonAvatar>
@@ -130,7 +153,7 @@ const Home: React.FC = () => {
           <IonText color="medium" className="ion-text-uppercase">
             <p className="ion-padding-start">Отсутствуют сегодня</p>
           </IonText>
-          <IonItem>
+          <IonItem button detail={false} onClick={() => openModal(2)}>
             <IonAvatar slot="start">
               <img
                 alt="Silhouette of a person's head"
@@ -147,7 +170,7 @@ const Home: React.FC = () => {
               </div>
             </IonLabel>
           </IonItem>
-          <IonItem>
+          <IonItem button detail={false} onClick={() => openModal(2)}>
             <IonAvatar slot="start">
               <img
                 alt="Silhouette of a person's head"
@@ -164,7 +187,7 @@ const Home: React.FC = () => {
               </div>
             </IonLabel>
           </IonItem>
-          <IonItem>
+          <IonItem button detail={false} onClick={() => openModal(2)}>
             <IonAvatar slot="start">
               <img
                 alt="Silhouette of a person's head"
@@ -181,7 +204,7 @@ const Home: React.FC = () => {
               </div>
             </IonLabel>
           </IonItem>
-          <IonItem>
+          <IonItem button detail={false} onClick={() => openModal(2)}>
             <IonAvatar slot="start">
               <img
                 alt="Silhouette of a person's head"
@@ -198,7 +221,7 @@ const Home: React.FC = () => {
               </div>
             </IonLabel>
           </IonItem>
-          <IonItem lines="full">
+          <IonItem lines="full" button detail={false} onClick={() => openModal(2)}>
             <IonAvatar slot="start">
               <img
                 alt="Silhouette of a person's head"

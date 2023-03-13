@@ -10,6 +10,18 @@ ion-toolbar {
   --background: var(--ion-color-dark-contrast);
 }
 
+ion-datetime {
+  --background: var(--ion-color-dark-contrast);
+}
+
+.ion-color-white {
+  --background: var(--ion-color-white);
+}
+
+.ion-sheet-modal ion-content {
+  --background: var(--ion-color-dark-contrast);
+}
+
 ion-title {
   padding-inline: 0px;
   padding: 0px;

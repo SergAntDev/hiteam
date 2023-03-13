@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   IonContent,
   IonHeader,
@@ -12,6 +13,7 @@ import {
   IonIcon,
   IonRow,
   IonCol,
+  useIonModal,
 } from "@ionic/react";
 import {
   arrowBackOutline,
@@ -19,13 +21,34 @@ import {
   checkmarkOutline,
   closeOutline,
 } from "ionicons/icons";
+import { OverlayEventDetail } from "@ionic/react/dist/types/components/react-component-lib/interfaces";
+
+import RequestDetailsModal from "../../components/Modals/Requests/Details";
 
 const Requests: React.FC = () => {
+  const [modalType, setModalType] = useState<number>(1);
+
+  const [present, dismiss] = useIonModal(RequestDetailsModal, {
+    onDismiss: (data: string, role: string) => dismiss(data, role),
+    type: modalType
+  });
+
+  const openModal = (type: number) => {
+    setModalType(type);
+    present({
+      onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => {
+        if (ev.detail.role === "confirm") {
+          console.log(ev.detail.data);
+        }
+      },
+    });
+  };
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButtons slot="start">
+          <IonButtons slot="start" className="ion-padding-start">
             <IonBackButton
               defaultHref="/profile"
               text=""
@@ -41,7 +64,7 @@ const Requests: React.FC = () => {
           <p className="ion-padding-start">Активные</p>
         </IonText>
 
-        <IonItem lines="full">
+        <IonItem lines="full" button detail={false} onClick={() => openModal(2)}>
           <IonLabel>
             <IonRow>
               <IonCol size="auto" className="pl-0">
@@ -56,7 +79,7 @@ const Requests: React.FC = () => {
             <p>Плохо себя чувствую. Температура и кашель и насморк</p>
           </IonLabel>
         </IonItem>
-        <IonItem lines="full">
+        <IonItem lines="full" button detail={false} onClick={() => openModal(2)}>
           <IonLabel>
             <IonRow>
               <IonCol size="auto" className="pl-0">

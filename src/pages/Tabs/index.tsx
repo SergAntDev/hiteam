@@ -13,7 +13,7 @@ import { home, calendarNumber, personCircle } from "ionicons/icons";
 
 import Home from "../Home";
 import Users from "../Users";
-import RequestModal from "../../components/Modals/CreateRequest";
+import RequestModal from "../../components/Modals/Requests/Create";
 
 const Tabs: React.FC = () => {
   const [present, dismiss] = useIonModal(RequestModal, {
