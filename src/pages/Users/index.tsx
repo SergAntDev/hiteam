@@ -9,8 +9,6 @@ import {
   IonText,
 } from "@ionic/react";
 
-import "./index.css";
-
 const Tab3: React.FC = () => {
   return (
     <IonPage>
@@ -24,10 +22,10 @@ const Tab3: React.FC = () => {
       <IonContent fullscreen>
         <div>
           <IonText color="medium" className="ion-text-uppercase">
-            <p className="ion-padding-start">Главный отдел</p>
+            <p className="ion-padding-start group-label">Главный отдел</p>
           </IonText>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -39,7 +37,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -51,7 +49,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -63,7 +61,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -75,7 +73,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false} lines="full">
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -90,10 +88,10 @@ const Tab3: React.FC = () => {
 
         <div>
           <IonText color="medium" className="ion-text-uppercase">
-            <p className="ion-padding-start">Panel Разработчики</p>
+            <p className="ion-padding-start group-label">Panel Разработчики</p>
           </IonText>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -105,7 +103,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -117,7 +115,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -129,7 +127,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -141,7 +139,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false} lines="full">
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -156,10 +154,10 @@ const Tab3: React.FC = () => {
 
         <div>
           <IonText color="medium" className="ion-text-uppercase">
-            <p className="ion-padding-start">My Разработчики</p>
+            <p className="ion-padding-start group-label">My Разработчики</p>
           </IonText>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -171,7 +169,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -183,7 +181,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -195,7 +193,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -207,7 +205,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false} lines="full">
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"

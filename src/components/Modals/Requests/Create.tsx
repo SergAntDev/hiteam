@@ -115,20 +115,20 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
       </IonModal>
 
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar className="ion-no-padding">
           <IonButtons slot="end">
             <IonButton color="primary" onClick={() => onDismiss({}, "cancel")}>
               <IonIcon icon={closeOutline} />
             </IonButton>
           </IonButtons>
           <IonTitle>
-            <h2 className="ion-no-margin ion-text-start">Создать запрос</h2>
+            <h2 className="ion-no-margin ion-text-start pl-12">Создать запрос</h2>
           </IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
+      <IonContent className="ion-padding pt-0">
         <IonText color="medium" className="ion-text-uppercase">
-          <p>Причина</p>
+          <p className="group-label">Причина</p>
         </IonText>
         <IonItem id="open-modal" shape="round" lines="none" button detail className="ion-margin-bottom">
           <IonIcon slot="start" icon={addCircleOutline} />
@@ -138,9 +138,9 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
         </IonItem>
 
         <IonText color="medium" className="ion-text-uppercase">
-          <p>Дата, Период</p>
+          <p className="group-label">Дата, Период</p>
         </IonText>
-        <IonAccordionGroup ref={accordionGroup} multiple={true}>
+        <IonAccordionGroup ref={accordionGroup} multiple={true} className="accordion-rouned">
           <IonAccordion value="first" toggleIcon="">
             <IonItem slot="header" className="ion-padding-start ion-padding-end">
               <IonIcon slot="start" icon={calendarOutline} />
@@ -162,7 +162,7 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
         </IonAccordionGroup>
 
         <IonText color="medium" className="ion-text-uppercase">
-          <p>Комментарий</p>
+          <p className="group-label">Комментарий</p>
         </IonText>
         <IonItem shape="round" lines="none">
           <IonTextarea

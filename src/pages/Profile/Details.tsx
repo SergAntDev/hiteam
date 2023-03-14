@@ -32,7 +32,7 @@ const ProfileDetails: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <IonItem lines="full">
-          <IonAvatar slot="start">
+          <IonAvatar slot="start" className="avatar-56">
             <img
               alt="Silhouette of a person's head"
               src="https://ionicframework.com/docs/img/demos/avatar.svg"

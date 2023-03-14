@@ -31,13 +31,13 @@ const RequestDetailsModal: React.FC<IProps> = ({ onDismiss, type }) => {
             </IonButton>
           </IonButtons>
           <IonTitle>
-            <h2 className="ion-no-margin ion-text-start">Запрос</h2>
+            <h2 className="ion-no-margin ion-text-start pl-12">Запрос</h2>
           </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent color="white">
         <IonItem lines="full">
-          <IonAvatar slot="start">
+          <IonAvatar slot="start" className="avatar-56">
             <img
               alt="Silhouette of a person's head"
               src="https://ionicframework.com/docs/img/demos/avatar.svg"

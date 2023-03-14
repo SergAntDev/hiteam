@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   IonAvatar,
   IonContent,
@@ -10,6 +11,8 @@ import {
   IonIcon,
   IonText,
   useIonModal,
+  IonRow,
+  IonCol,
 } from "@ionic/react";
 import { OverlayEventDetail } from "@ionic/react/dist/types/components/react-component-lib/interfaces";
 import { homeOutline } from "ionicons/icons";
@@ -17,10 +20,6 @@ import { format } from "date-fns";
 import { ru } from "date-fns/esm/locale";
 
 import RequestDetailsModal from "../../components/Modals/Requests/Details";
-
-import "./main.css";
-import { useState } from "react";
-
 interface ICurrentDate {
   dayOfweek: string;
   monthWithDate: string;
@@ -73,7 +72,7 @@ const Home: React.FC = () => {
               <p>{prepareCurrentDate().dayOfweek}</p>
               <h1>{prepareCurrentDate().monthWithDate}</h1>
             </IonLabel>
-            <IonAvatar slot="end">
+            <IonAvatar slot="end" className="avatar-48">
               <img
                 alt="Silhouette of a person's head"
                 src="https://avatars.slack-edge.com/2023-02-15/4828862206512_15d53457ba3f26cfffca_48.png"
@@ -86,156 +85,230 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <div className="waiting-list">
           <IonText color="medium" className="ion-text-uppercase">
-            <p className="ion-padding-start">Ожидают одобрения</p>
+            <p className="ion-padding-start group-label">Ожидают одобрения</p>
           </IonText>
+
           <IonItem lines="full" button detail={false} onClick={() => openModal(1)}>
             <IonLabel>
-              <div className="inline-container">
-                <IonAvatar>
-                  <img
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
-                </IonAvatar>
-                <h2>Сергей Антонов</h2>
-              </div>
-              <div className="inline-container">
-                <p className="date">2 марта</p>
-                <IonBadge color="success">
-                  <IonIcon icon={homeOutline}></IonIcon> Отпуск
-                </IonBadge>
-              </div>
+              <IonRow>
+                <IonCol size="auto" className="pl-0">
+                  <IonAvatar className="avatar-24">
+                    <img
+                      alt="Silhouette of a person's head"
+                      src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                    />
+                  </IonAvatar>
+                </IonCol>
+                <IonCol className="d-flex ion-align-items-center">
+                  <h2>Сергей Антонов</h2>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="auto" className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
+                  <p className="date">2 марта</p>
+                </IonCol>
+                <IonCol className="pt-0 pb-0 d-flex ion-align-items-center">
+                  <IonBadge color="success">
+                    <IonIcon icon={homeOutline}></IonIcon> Отпуск
+                  </IonBadge>
+                </IonCol>
+              </IonRow>
             </IonLabel>
           </IonItem>
           <IonItem lines="full" button detail={false} onClick={() => openModal(1)}>
             <IonLabel>
-              <div className="inline-container">
-                <IonAvatar>
-                  <img
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
-                </IonAvatar>
-                <h2>Сергей Антонов</h2>
-              </div>
-              <div className="inline-container">
-                <p className="date">2 марта</p>
-                <IonBadge color="success">
-                  <IonIcon icon={homeOutline}></IonIcon> Отпуск
-                </IonBadge>
-              </div>
-              <p>Плохо себя чувствую. Температура и кашель и насморк</p>
+              <IonRow>
+                <IonCol size="auto" className="pl-0">
+                  <IonAvatar className="avatar-24">
+                    <img
+                      alt="Silhouette of a person's head"
+                      src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                    />
+                  </IonAvatar>
+                </IonCol>
+                <IonCol className="d-flex ion-align-items-center">
+                  <h2>Сергей Антонов</h2>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="auto" className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
+                  <p className="date">2 марта</p>
+                </IonCol>
+                <IonCol className="pt-0 pb-0 d-flex ion-align-items-center">
+                  <IonBadge color="success">
+                    <IonIcon icon={homeOutline}></IonIcon> Отпуск
+                  </IonBadge>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol className="pl-0">
+                  <p>Плохо себя чувствую. Температура и кашель и насморк</p>
+                </IonCol>
+              </IonRow>
             </IonLabel>
           </IonItem>
           <IonItem lines="full" button detail={false} onClick={() => openModal(1)}>
             <IonLabel>
-              <div className="inline-container">
-                <IonAvatar>
-                  <img
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
-                </IonAvatar>
-                <h2>Сергей Антонов</h2>
-              </div>
-              <div className="inline-container">
-                <p className="date">2 марта</p>
-                <IonBadge color="success">
-                  <IonIcon icon={homeOutline}></IonIcon> Отпуск
-                </IonBadge>
-              </div>
-              <p>Плохо себя чувствую. Температура и кашель и насморк</p>
+              <IonRow>
+                <IonCol size="auto" className="pl-0">
+                  <IonAvatar className="avatar-24">
+                    <img
+                      alt="Silhouette of a person's head"
+                      src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                    />
+                  </IonAvatar>
+                </IonCol>
+                <IonCol className="d-flex ion-align-items-center">
+                  <h2>Сергей Антонов</h2>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="auto" className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
+                  <p className="date">2 марта</p>
+                </IonCol>
+                <IonCol className="pt-0 pb-0 d-flex ion-align-items-center">
+                  <IonBadge color="success">
+                    <IonIcon icon={homeOutline}></IonIcon> Отпуск
+                  </IonBadge>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol className="pl-0">
+                  <p>Плохо себя чувствую. Температура и кашель и насморк</p>
+                </IonCol>
+              </IonRow>
             </IonLabel>
           </IonItem>
         </div>
 
         <div className="missing-list">
           <IonText color="medium" className="ion-text-uppercase">
-            <p className="ion-padding-start">Отсутствуют сегодня</p>
+            <p className="ion-padding-start group-label">Отсутствуют сегодня</p>
           </IonText>
+
           <IonItem button detail={false} onClick={() => openModal(2)}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-56">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <div className="inline-container">
-                <p className="date">2 марта</p>
-                <IonBadge color="primary">
-                  <IonIcon icon={homeOutline}></IonIcon> Работа из дома
-                </IonBadge>
-              </div>
+              <IonRow>
+                <IonCol className="pl-0">
+                  <h2>Сергей Антонов</h2>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
+                  <p>2 марта</p>
+                </IonCol>
+                <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
+                  <IonBadge color="primary">
+                    <IonIcon icon={homeOutline}></IonIcon> Работа из дома
+                  </IonBadge>
+                </IonCol>
+              </IonRow>
             </IonLabel>
           </IonItem>
           <IonItem button detail={false} onClick={() => openModal(2)}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-56">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <div className="inline-container">
-                <p className="date">2 марта</p>
-                <IonBadge color="tertiary">
-                  <IonIcon icon={homeOutline}></IonIcon> Работа не по графику
-                </IonBadge>
-              </div>
+              <IonRow>
+                <IonCol className="pl-0">
+                  <h2>Сергей Антонов</h2>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
+                  <p>2 марта</p>
+                </IonCol>
+                <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
+                  <IonBadge color="tertiary">
+                    <IonIcon icon={homeOutline}></IonIcon> Работа не по графику
+                  </IonBadge>
+                </IonCol>
+              </IonRow>
             </IonLabel>
           </IonItem>
           <IonItem button detail={false} onClick={() => openModal(2)}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-56">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <div className="inline-container">
-                <p className="date">2 марта</p>
-                <IonBadge color="primary">
-                  <IonIcon icon={homeOutline}></IonIcon> Работа из дома
-                </IonBadge>
-              </div>
+              <IonRow>
+                <IonCol className="pl-0">
+                  <h2>Сергей Антонов</h2>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
+                  <p>2 марта</p>
+                </IonCol>
+                <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
+                  <IonBadge color="primary">
+                    <IonIcon icon={homeOutline}></IonIcon> Работа из дома
+                  </IonBadge>
+                </IonCol>
+              </IonRow>
             </IonLabel>
           </IonItem>
           <IonItem button detail={false} onClick={() => openModal(2)}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-56">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <div className="inline-container">
-                <p className="date">2 марта</p>
-                <IonBadge color="primary">
-                  <IonIcon icon={homeOutline}></IonIcon> Работа из дома
-                </IonBadge>
-              </div>
+              <IonRow>
+                <IonCol className="pl-0">
+                  <h2>Сергей Антонов</h2>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
+                  <p>2 марта</p>
+                </IonCol>
+                <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
+                  <IonBadge color="primary">
+                    <IonIcon icon={homeOutline}></IonIcon> Работа из дома
+                  </IonBadge>
+                </IonCol>
+              </IonRow>
             </IonLabel>
           </IonItem>
           <IonItem lines="full" button detail={false} onClick={() => openModal(2)}>
-            <IonAvatar slot="start">
+            <IonAvatar slot="start" className="avatar-56">
               <img
                 alt="Silhouette of a person's head"
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <div className="inline-container">
-                <p className="date">2 марта</p>
-                <IonBadge color="primary">
-                  <IonIcon icon={homeOutline}></IonIcon> Работа из дома
-                </IonBadge>
-              </div>
+              <IonRow>
+                <IonCol className="pl-0">
+                  <h2>Сергей Антонов</h2>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
+                  <p>2 марта</p>
+                </IonCol>
+                <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
+                  <IonBadge color="primary">
+                    <IonIcon icon={homeOutline}></IonIcon> Работа из дома
+                  </IonBadge>
+                </IonCol>
+              </IonRow>
             </IonLabel>
           </IonItem>
         </div>

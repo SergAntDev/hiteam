@@ -61,16 +61,16 @@ const Requests: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <IonText color="medium" className="ion-text-uppercase">
-          <p className="ion-padding-start">Активные</p>
+          <p className="ion-padding-start group-label">Активные</p>
         </IonText>
 
         <IonItem lines="full" button detail={false} onClick={() => openModal(2)}>
           <IonLabel>
             <IonRow>
-              <IonCol size="auto" className="pl-0">
+              <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
                 <IonText>2 марта - 12 марта</IonText>
               </IonCol>
-              <IonCol>
+              <IonCol className="d-flex ion-align-items-center">
                 <IonBadge color="tertiary">
                   <IonIcon icon={homeOutline} /> Работа не по графику
                 </IonBadge>
@@ -82,10 +82,10 @@ const Requests: React.FC = () => {
         <IonItem lines="full" button detail={false} onClick={() => openModal(2)}>
           <IonLabel>
             <IonRow>
-              <IonCol size="auto" className="pl-0">
+              <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
                 <IonText>2 марта - 12 марта</IonText>
               </IonCol>
-              <IonCol>
+              <IonCol className="d-flex ion-align-items-center">
                 <IonBadge color="success">
                   <IonIcon icon={homeOutline} /> Отпуск
                 </IonBadge>
@@ -99,7 +99,7 @@ const Requests: React.FC = () => {
                   className="ion-margin-end"
                 />
               </IonCol>
-              <IonCol size="11">
+              <IonCol size="11" className="d-flex ion-align-items-center">
                 <h2>Сергей Антонов</h2>
               </IonCol>
             </IonRow>
@@ -107,7 +107,7 @@ const Requests: React.FC = () => {
         </IonItem>
 
         <IonText color="medium" className="ion-text-uppercase">
-          <p className="ion-padding-start">Прошедшие</p>
+          <p className="ion-padding-start group-label">Прошедшие</p>
         </IonText>
 
         <IonItem lines="full">
@@ -116,7 +116,7 @@ const Requests: React.FC = () => {
               <IonCol size="auto" className="pl-0">
                 <IonText>2 марта</IonText>
               </IonCol>
-              <IonCol>
+              <IonCol className="d-flex ion-align-items-center">
                 <IonBadge color="success">
                   <IonIcon icon={homeOutline} /> Отпуск
                 </IonBadge>

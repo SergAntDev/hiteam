@@ -1,0 +1,188 @@
+ion-tab-bar {
+  --background: var(--ion-color-dark-contrast);
+}
+
+ion-content {
+  --background: var(--ion-color-light);
+}
+
+ion-toolbar {
+  --background: var(--ion-color-dark-contrast);
+  --padding-start: 0px !important;
+  --padding-end: 0px !important;
+}
+
+ion-datetime {
+  --background: var(--ion-color-dark-contrast);
+}
+
+ion-title {
+  padding-inline: 0px;
+  padding: 0px;
+}
+
+ion-badge {
+  border-radius: 6px;
+}
+
+ion-item[shape="round"] {
+  --border-radius: 16px;
+  border-radius: 16px;
+}
+
+.ion-color-white {
+  --background: var(--ion-color-white);
+}
+
+.ion-sheet-modal ion-content {
+  --background: var(--ion-color-dark-contrast);
+}
+
+.accordion-rouned {
+  border-radius: 16px;
+  --border-radius: 16px;
+  overflow: hidden;
+}
+
+.list-title {
+  color: var(--ion-color-medium);
+  padding-left: unset;
+  padding-right: unset;
+  padding-inline-start: 20px;
+  padding-inline-end: var(--padding-end);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.inline-container {
+  display: flex;
+  align-items: center;
+}
+
+ion-avatar.avatar-56 {
+  max-width: 56px;
+  max-height: 56px;
+  width: 56px;
+  height: 56px;
+  margin: 6px 16px 6px 0px;
+}
+
+ion-avatar.avatar-48 {
+  max-width: 48px;
+  max-height: 48px;
+  width: 48px;
+  height: 48px;
+}
+
+ion-avatar.avatar-24 {
+  max-width: 24px;
+  max-height: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+p {
+  margin-bottom: 12px;
+  margin-top: 16px;
+}
+
+.button-fixed-bottom {
+  left: 0;
+  right: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.flex-center-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.group-label {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  --margin-top: 16px;
+  --margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.text-24 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.text-16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.text-14 {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.text-14 {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.f-weight-400 {
+  font-weight: 400;
+}
+
+.f-weight-500 {
+  font-weight: 500;
+}
+
+.f-weight-600 {
+  font-weight: 600;
+}
+
+.f-weight-700 {
+  font-weight: 700;
+}
+
+.pt-0 {
+  padding-top: 0px;
+  --padding-top: 0px;
+}
+
+.pb-0 {
+  padding-bottom: 0px;
+}
+
+.pl-0 {
+  padding-left: 0px;
+}
+
+.pl-12 {
+  padding-left: 12px;
+}
+
+.pr-0 {
+  padding-right: 0px;
+}
+
+.pr-12 {
+  padding-right: 12px;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
