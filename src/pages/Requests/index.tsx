@@ -56,7 +56,7 @@ const Requests: React.FC = () => {
               icon={arrowBackOutline}
             />
           </IonButtons>
-          <h2 className="ion-no-margin ion-padding-start">Запросы</h2>
+          <h2 className="ion-no-margin ion-padding-start f-weight-700 text-24">Запросы</h2>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -68,7 +68,7 @@ const Requests: React.FC = () => {
           <IonLabel>
             <IonRow>
               <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
-                <IonText>2 марта - 12 марта</IonText>
+                <IonText className="text-16">2 марта - 12 марта</IonText>
               </IonCol>
               <IonCol className="d-flex ion-align-items-center">
                 <IonBadge color="tertiary">
@@ -76,14 +76,14 @@ const Requests: React.FC = () => {
                 </IonBadge>
               </IonCol>
             </IonRow>
-            <p>Плохо себя чувствую. Температура и кашель и насморк</p>
+            <IonText color="dark-medium" className="text-14">Плохо себя чувствую. Температура и кашель и насморк</IonText>
           </IonLabel>
         </IonItem>
         <IonItem lines="full" button detail={false} onClick={() => openModal(2)}>
           <IonLabel>
             <IonRow>
               <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
-                <IonText>2 марта - 12 марта</IonText>
+                <IonText className="text-16">2 марта - 12 марта</IonText>
               </IonCol>
               <IonCol className="d-flex ion-align-items-center">
                 <IonBadge color="success">
@@ -100,7 +100,7 @@ const Requests: React.FC = () => {
                 />
               </IonCol>
               <IonCol size="11" className="d-flex ion-align-items-center">
-                <h2>Сергей Антонов</h2>
+                <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
               </IonCol>
             </IonRow>
           </IonLabel>
@@ -114,7 +114,7 @@ const Requests: React.FC = () => {
           <IonLabel>
             <IonRow>
               <IonCol size="auto" className="pl-0">
-                <IonText>2 марта</IonText>
+                <IonText className="text-16">2 марта</IonText>
               </IonCol>
               <IonCol className="d-flex ion-align-items-center">
                 <IonBadge color="success">
@@ -122,7 +122,7 @@ const Requests: React.FC = () => {
                 </IonBadge>
               </IonCol>
             </IonRow>
-            <p>Плохо себя чувствую. Температура и кашель и насморк</p>
+            <IonText color="dark-medium" className="text-14">Плохо себя чувствую. Температура и кашель и насморк</IonText>
             <IonRow className="ion-align-items-center">
               <IonCol size="1" className="pl-0">
                 <IonIcon
@@ -132,7 +132,7 @@ const Requests: React.FC = () => {
                 />
               </IonCol>
               <IonCol size="11">
-                <h2>Сергей Антонов</h2>
+                <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
               </IonCol>
             </IonRow>
           </IonLabel>

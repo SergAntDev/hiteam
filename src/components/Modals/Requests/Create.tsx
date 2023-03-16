@@ -122,7 +122,7 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
             </IonButton>
           </IonButtons>
           <IonTitle>
-            <h2 className="ion-no-margin ion-text-start pl-12">Создать запрос</h2>
+            <h2 className="ion-no-margin ion-text-start pl-12 f-weight-700 text-24">Создать запрос</h2>
           </IonTitle>
         </IonToolbar>
       </IonHeader>

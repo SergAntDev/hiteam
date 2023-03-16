@@ -15,7 +15,7 @@ const Tab3: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonItem lines="none" color="none">
-            <h2>Perfect Panel</h2>
+            <h2 className="f-weight-700 text-24">Perfect Panel</h2>
           </IonItem>
         </IonToolbar>
       </IonHeader>
@@ -32,8 +32,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
@@ -44,8 +46,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
@@ -56,8 +60,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
@@ -68,8 +74,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false} lines="full">
@@ -80,8 +88,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
         </div>
@@ -98,8 +108,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
@@ -110,8 +122,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
@@ -122,8 +136,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
@@ -134,8 +150,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false} lines="full">
@@ -146,8 +164,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
         </div>
@@ -164,8 +184,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
@@ -176,8 +198,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
@@ -188,8 +212,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false}>
@@ -200,8 +226,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
           <IonItem routerLink="/profile/1" detail={false} lines="full">
@@ -212,8 +240,10 @@ const Tab3: React.FC = () => {
               />
             </IonAvatar>
             <IonLabel>
-              <h2>Сергей Антонов</h2>
-              <p>Разработчик интерфейсов</p>
+              <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
+              <IonText color="dark-medium">
+                <p className="text-12">Разработчик интерфейсов</p>
+              </IonText>
             </IonLabel>
           </IonItem>
         </div>

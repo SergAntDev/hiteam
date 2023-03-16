@@ -31,7 +31,7 @@ const RequestDetailsModal: React.FC<IProps> = ({ onDismiss, type }) => {
             </IonButton>
           </IonButtons>
           <IonTitle>
-            <h2 className="ion-no-margin ion-text-start pl-12">Запрос</h2>
+            <h2 className="ion-no-margin ion-text-start pl-12 f-weight-700 text-24">Запрос</h2>
           </IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -44,7 +44,7 @@ const RequestDetailsModal: React.FC<IProps> = ({ onDismiss, type }) => {
             />
           </IonAvatar>
           <IonLabel>
-            <h2>Сергей Антонов</h2>
+            <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
             <IonBadge color="primary">
               <IonIcon icon={homeOutline} /> Работа из дома
             </IonBadge>
@@ -52,22 +52,28 @@ const RequestDetailsModal: React.FC<IProps> = ({ onDismiss, type }) => {
         </IonItem>
         <IonItem lines="full">
           <IonLabel>
-            <p>Дата, период</p>
-            <IonText>9 марта</IonText>
+            <div>
+              <IonText color="dark-medium" className="text-14">Дата, период</IonText>
+            </div>
+            <IonText color="dark">9 марта</IonText>
           </IonLabel>
         </IonItem>
         <IonItem lines="full">
           <IonLabel>
-            <p>Комментарий</p>
-            <IonText className="ion-text-wrap">
+            <div>
+              <IonText color="dark-medium" className="text-14">Комментарий</IonText>
+            </div>
+            <IonText className="ion-text-wrap" color="dark">
               Утром запись к стоматологу на 8:00. Отработаю сегодня вечером, задержусь на работе до 18:00.
             </IonText>
           </IonLabel>
         </IonItem>
         {type === 2 && <IonItem lines="full">
           <IonLabel>
-            <p>Одобрено</p>
-            <IonText className="ion-text-wrap">
+            <div>
+              <IonText color="dark-medium" className="text-14">Одобрено</IonText>
+            </div>
+            <IonText className="ion-text-wrap" color="dark">
               Дмитрий Овчаренко
             </IonText>
           </IonLabel>

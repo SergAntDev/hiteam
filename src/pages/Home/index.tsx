@@ -69,8 +69,10 @@ const Home: React.FC = () => {
             detail={false}
           >
             <IonLabel>
-              <p>{prepareCurrentDate().dayOfweek}</p>
-              <h1>{prepareCurrentDate().monthWithDate}</h1>
+              <IonText color="medium">
+                <p className="ion-text-uppercase text-12">{prepareCurrentDate().dayOfweek}</p>
+              </IonText>
+              <h1 className="text-24 f-weight-700">{prepareCurrentDate().monthWithDate}</h1>
             </IonLabel>
             <IonAvatar slot="end" className="avatar-48">
               <img
@@ -100,16 +102,16 @@ const Home: React.FC = () => {
                   </IonAvatar>
                 </IonCol>
                 <IonCol className="d-flex ion-align-items-center">
-                  <h2>Сергей Антонов</h2>
+                  <h2 className="f-weight-600">Сергей Антонов</h2>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="auto" className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
-                  <p className="date">2 марта</p>
+                  <p className="date text-16">2 марта</p>
                 </IonCol>
                 <IonCol className="pt-0 pb-0 d-flex ion-align-items-center">
                   <IonBadge color="success">
-                    <IonIcon icon={homeOutline}></IonIcon> Отпуск
+                    <IonIcon icon={homeOutline} /> Отпуск
                   </IonBadge>
                 </IonCol>
               </IonRow>
@@ -127,22 +129,22 @@ const Home: React.FC = () => {
                   </IonAvatar>
                 </IonCol>
                 <IonCol className="d-flex ion-align-items-center">
-                  <h2>Сергей Антонов</h2>
+                  <h2 className="f-weight-600">Сергей Антонов</h2>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="auto" className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
-                  <p className="date">2 марта</p>
+                  <p className="date text-16">2 марта</p>
                 </IonCol>
                 <IonCol className="pt-0 pb-0 d-flex ion-align-items-center">
                   <IonBadge color="success">
-                    <IonIcon icon={homeOutline}></IonIcon> Отпуск
+                    <IonIcon icon={homeOutline} /> Отпуск
                   </IonBadge>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol className="pl-0">
-                  <p>Плохо себя чувствую. Температура и кашель и насморк</p>
+                  <IonText color="dark-medium" className="text-14">Плохо себя чувствую. Температура и кашель и насморк</IonText>
                 </IonCol>
               </IonRow>
             </IonLabel>
@@ -159,22 +161,22 @@ const Home: React.FC = () => {
                   </IonAvatar>
                 </IonCol>
                 <IonCol className="d-flex ion-align-items-center">
-                  <h2>Сергей Антонов</h2>
+                  <h2 className="f-weight-600">Сергей Антонов</h2>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="auto" className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
-                  <p className="date">2 марта</p>
+                  <p className="date text-16">2 марта</p>
                 </IonCol>
                 <IonCol className="pt-0 pb-0 d-flex ion-align-items-center">
                   <IonBadge color="success">
-                    <IonIcon icon={homeOutline}></IonIcon> Отпуск
+                    <IonIcon icon={homeOutline} /> Отпуск
                   </IonBadge>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol className="pl-0">
-                  <p>Плохо себя чувствую. Температура и кашель и насморк</p>
+                  <IonText color="dark-medium" className="text-14">Плохо себя чувствую. Температура и кашель и насморк</IonText>
                 </IonCol>
               </IonRow>
             </IonLabel>
@@ -196,16 +198,16 @@ const Home: React.FC = () => {
             <IonLabel>
               <IonRow>
                 <IonCol className="pl-0">
-                  <h2>Сергей Антонов</h2>
+                  <h2 className="f-weight-600">Сергей Антонов</h2>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
-                  <p>2 марта</p>
+                  <p className="text-16">2 марта</p>
                 </IonCol>
                 <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
                   <IonBadge color="primary">
-                    <IonIcon icon={homeOutline}></IonIcon> Работа из дома
+                    <IonIcon icon={homeOutline} /> Работа из дома
                   </IonBadge>
                 </IonCol>
               </IonRow>
@@ -221,16 +223,16 @@ const Home: React.FC = () => {
             <IonLabel>
               <IonRow>
                 <IonCol className="pl-0">
-                  <h2>Сергей Антонов</h2>
+                  <h2 className="f-weight-600">Сергей Антонов</h2>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
-                  <p>2 марта</p>
+                  <p className="text-16">2 марта</p>
                 </IonCol>
                 <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
                   <IonBadge color="tertiary">
-                    <IonIcon icon={homeOutline}></IonIcon> Работа не по графику
+                    <IonIcon icon={homeOutline} /> Работа не по графику
                   </IonBadge>
                 </IonCol>
               </IonRow>
@@ -246,16 +248,16 @@ const Home: React.FC = () => {
             <IonLabel>
               <IonRow>
                 <IonCol className="pl-0">
-                  <h2>Сергей Антонов</h2>
+                  <h2 className="f-weight-600">Сергей Антонов</h2>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
-                  <p>2 марта</p>
+                  <p className="text-16">2 марта</p>
                 </IonCol>
                 <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
                   <IonBadge color="primary">
-                    <IonIcon icon={homeOutline}></IonIcon> Работа из дома
+                    <IonIcon icon={homeOutline} /> Работа из дома
                   </IonBadge>
                 </IonCol>
               </IonRow>
@@ -271,16 +273,16 @@ const Home: React.FC = () => {
             <IonLabel>
               <IonRow>
                 <IonCol className="pl-0">
-                  <h2>Сергей Антонов</h2>
+                  <h2 className="f-weight-600">Сергей Антонов</h2>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
-                  <p>2 марта</p>
+                  <p className="text-16">2 марта</p>
                 </IonCol>
                 <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
                   <IonBadge color="primary">
-                    <IonIcon icon={homeOutline}></IonIcon> Работа из дома
+                    <IonIcon icon={homeOutline} /> Работа из дома
                   </IonBadge>
                 </IonCol>
               </IonRow>
@@ -296,16 +298,16 @@ const Home: React.FC = () => {
             <IonLabel>
               <IonRow>
                 <IonCol className="pl-0">
-                  <h2>Сергей Антонов</h2>
+                  <h2 className="f-weight-600">Сергей Антонов</h2>
                 </IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="auto" className="pl-0 d-flex ion-align-items-center">
-                  <p>2 марта</p>
+                  <p className="text-16">2 марта</p>
                 </IonCol>
                 <IonCol className="pl-0 pt-0 pb-0 d-flex ion-align-items-center">
                   <IonBadge color="primary">
-                    <IonIcon icon={homeOutline}></IonIcon> Работа из дома
+                    <IonIcon icon={homeOutline} /> Работа из дома
                   </IonBadge>
                 </IonCol>
               </IonRow>
