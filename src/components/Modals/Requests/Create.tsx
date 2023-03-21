@@ -20,7 +20,10 @@ import {
   IonList,
 } from "@ionic/react";
 import { IonTextareaCustomEvent, TextareaChangeEventDetail } from "@ionic/core";
-import { closeOutline, addCircleOutline, calendarOutline } from "ionicons/icons";
+import { addCircleOutline } from "ionicons/icons";
+
+import chooseDate from "../../../assets/icons/choose-date.svg";
+import closeModal from "../../../assets/icons/close-modal.svg";
 
 export interface IModalData {
   reason?: string | null | undefined;
@@ -118,7 +121,7 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
         <IonToolbar className="ion-no-padding">
           <IonButtons slot="end">
             <IonButton color="primary" onClick={() => onDismiss({}, "cancel")}>
-              <IonIcon icon={closeOutline} />
+              <IonIcon icon={closeModal} />
             </IonButton>
           </IonButtons>
           <IonTitle>
@@ -143,7 +146,7 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
         <IonAccordionGroup ref={accordionGroup} multiple={true} className="accordion-rouned">
           <IonAccordion value="first" toggleIcon="">
             <IonItem slot="header" className="ion-padding-start ion-padding-end">
-              <IonIcon slot="start" icon={calendarOutline} />
+              <IonIcon slot="start" icon={chooseDate} color="medium" />
               <IonLabel>Дата начала</IonLabel>
             </IonItem>
             <div className="ion-padding-start ion-padding-end" slot="content">
@@ -152,7 +155,7 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
           </IonAccordion>
           <IonAccordion value="second" toggleIcon="">
             <IonItem slot="header" className="ion-padding-start ion-padding-end">
-              <IonIcon slot="start" icon={calendarOutline} />
+              <IonIcon slot="start" icon={chooseDate} color="medium" />
               <IonLabel>Дата окончания</IonLabel>
             </IonItem>
             <div className="ion-padding-start ion-padding-end" slot="content">

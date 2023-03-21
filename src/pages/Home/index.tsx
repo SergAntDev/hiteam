@@ -19,6 +19,8 @@ import { homeOutline } from "ionicons/icons";
 import { format } from "date-fns";
 import { ru } from "date-fns/esm/locale";
 
+// import emptyState from "../../assets/icons/empty-state.svg";
+
 import RequestDetailsModal from "../../components/Modals/Requests/Details";
 interface ICurrentDate {
   dayOfweek: string;
@@ -85,6 +87,12 @@ const Home: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen>
+        {/* <div className="empty-content">
+          <IonIcon icon={emptyState} size="large" color="very-light" />
+          <IonText color="medium">
+            <p className="ion-padding-start">Список пуст...</p>
+          </IonText>
+        </div> */}
         <div className="waiting-list">
           <IonText color="medium" className="ion-text-uppercase">
             <p className="ion-padding-start group-label">Ожидают одобрения</p>

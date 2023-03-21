@@ -19,9 +19,10 @@ import {
   arrowBackOutline,
   homeOutline,
   checkmarkOutline,
-  closeOutline,
 } from "ionicons/icons";
 import { OverlayEventDetail } from "@ionic/react/dist/types/components/react-component-lib/interfaces";
+
+import closeModal from "../../assets/icons/close-modal.svg";
 
 import RequestDetailsModal from "../../components/Modals/Requests/Details";
 
@@ -126,7 +127,7 @@ const Requests: React.FC = () => {
             <IonRow className="ion-align-items-center">
               <IonCol size="1" className="pl-0">
                 <IonIcon
-                  icon={closeOutline}
+                  icon={closeModal}
                   color="danger"
                   className="ion-margin-end"
                 />

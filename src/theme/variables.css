@@ -92,6 +92,15 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
+  /** very-light **/
+  --ion-color-very-light: #cbd5e1;
+  --ion-color-very-light-rgb: 203, 213, 225;
+  --ion-color-very-light-contrast: #000000;
+  --ion-color-very-light-contrast-rgb: 0, 0, 0;
+  --ion-color-very-light-shade: #d7d8da;
+  --ion-color-very-light-tint: #f5f6f9;
+
+  /* main */
   --ion-tab-bar-color: #475569;
   --ion-border-color: #e2e8f0;
   --ion-text-color: #1e293b;

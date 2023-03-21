@@ -1,5 +1,7 @@
 import { IonContent, IonPage, useIonRouter, IonButton, IonItem, IonInput, IonIcon, IonList } from "@ionic/react";
-import { at, key } from "ionicons/icons";
+
+import email from "../../assets/icons/email.svg";
+import password from "../../assets/icons/password.svg";
 
 import "./index.css";
 
@@ -18,11 +20,11 @@ const Login: React.FC = () => {
 
           <IonList inset className="m-0 ion-padding-start">
             <IonItem lines="full">
-              <IonIcon slot="start" icon={at} />
+              <IonIcon slot="start" icon={email} color="medium" />
               <IonInput placeholder="Почта" />
             </IonItem>
             <IonItem lines="none">
-              <IonIcon slot="start" icon={key} />
+              <IonIcon slot="start" icon={password} color="medium" />
               <IonInput placeholder="Пароль" />
             </IonItem>
           </IonList>

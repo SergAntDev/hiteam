@@ -1,7 +1,6 @@
 import { Redirect, Route } from "react-router-dom";
 import {
   IonIcon,
-  IonLabel,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
@@ -9,7 +8,10 @@ import {
   useIonModal,
 } from "@ionic/react";
 import { OverlayEventDetail } from "@ionic/core/components";
-import { home, calendarNumber, personCircle } from "ionicons/icons";
+
+import homeFill from "../../assets/icons/home-fill.svg";
+import requestStroke from "../../assets/icons/request-stroke.svg";
+import employeesFill from "../../assets/icons/employees-fill.svg";
 
 import Home from "../Home";
 import Users from "../Users";
@@ -44,18 +46,15 @@ const Tabs: React.FC = () => {
         </Route>
       </IonRouterOutlet>
 
-      <IonTabBar slot="bottom">
+      <IonTabBar slot="bottom" onIonTabsDidChange={e => console.log(e)}>
         <IonTabButton tab="main" href="/app/home">
-          <IonIcon icon={home} />
-          <IonLabel>Главная</IonLabel>
+          <IonIcon icon={homeFill} />
         </IonTabButton>
         <IonTabButton tab="request" onClick={() => openModal()}>
-          <IonIcon icon={calendarNumber} />
-          <IonLabel>Запрос</IonLabel>
+          <IonIcon icon={requestStroke} />
         </IonTabButton>
         <IonTabButton tab="users" href="/app/users">
-          <IonIcon icon={personCircle} />
-          <IonLabel>Сотрудники</IonLabel>
+          <IonIcon icon={employeesFill} />
         </IonTabButton>
       </IonTabBar>
     </IonTabs>

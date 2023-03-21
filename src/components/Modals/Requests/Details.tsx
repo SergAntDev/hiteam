@@ -13,7 +13,9 @@ import {
   IonBadge,
   IonAvatar,
 } from "@ionic/react";
-import { closeOutline, homeOutline } from "ionicons/icons";
+import { homeOutline } from "ionicons/icons";
+
+import closeModal from "../../../assets/icons/close-modal.svg";
 
 interface IProps {
   onDismiss: (data?: string, role?: string) => void;
@@ -27,7 +29,7 @@ const RequestDetailsModal: React.FC<IProps> = ({ onDismiss, type }) => {
         <IonToolbar>
           <IonButtons slot="end">
             <IonButton color="primary" onClick={() => onDismiss("dismiss", "cancel")}>
-              <IonIcon icon={closeOutline} />
+              <IonIcon icon={closeModal} />
             </IonButton>
           </IonButtons>
           <IonTitle>
