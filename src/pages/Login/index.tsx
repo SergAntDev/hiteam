@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     <IonPage>
       <IonContent fullscreen className="ion-padding ion-text-center">
         <div className="flex-center-column">
-          <h1 className="login-title">HiTeam</h1>
+          <h1 className="login-title">HI 👋 TEAM</h1>
 
           <IonList inset className="m-0 ion-padding-start">
             <IonItem lines="full">

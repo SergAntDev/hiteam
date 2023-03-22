@@ -16,17 +16,18 @@ import {
   IonAccordionGroup,
   IonAccordion,
   IonDatetime,
-  IonModal,
-  IonList,
+  useIonModal,
 } from "@ionic/react";
 import { IonTextareaCustomEvent, TextareaChangeEventDetail } from "@ionic/core";
-import { addCircleOutline } from "ionicons/icons";
+import { OverlayEventDetail } from '@ionic/core/components';
 
 import chooseDate from "../../../assets/icons/choose-date.svg";
 import closeModal from "../../../assets/icons/close-modal.svg";
+import vacation from "../../../assets/icons/reasons/vacation.svg";
+import ModalExample, { IReason } from "./Reasons";
 
 export interface IModalData {
-  reason?: string | null | undefined;
+  reason?: IReason | null | undefined;
   dateFrom?: string | null | undefined;
   dateTo?: string | null | undefined;
   comment?: string | null | undefined;
@@ -36,39 +37,17 @@ interface IProps {
   onDismiss: (data?: IModalData, role?: string) => void;
 }
 
-const reasonOptions = [
-  {
-    id: 1,
-    label: "Больничный"
-  },
-  {
-    id: 2,
-    label: "Отпуск"
-  },
-  {
-    id: 3,
-    label: "Работа из дома"
-  },
-  {
-    id: 4,
-    label: "Пропуск части дня"
-  },
-  {
-    id: 5,
-    label: "Пропуск дня"
-  },
-  {
-    id: 6,
-    label: "Работа не по графику"
-  }
-];
-
 const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
-  const modal = useRef<HTMLIonModalElement>(null);
   const accordionGroup = useRef<null | HTMLIonAccordionGroupElement>(null);
 
+  const [init, setInit] = useState<boolean>(false);
   const [form, setForm] = useState<IModalData>({
-    reason: null,
+    reason: {
+      id: 2,
+      label: "Отпуск",
+      icon: vacation,
+      color: "success"
+    },
     dateFrom: null,
     dateTo: null,
     comment: null,
@@ -83,40 +62,44 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
     }));
   };
 
+  const [present, dismiss] = useIonModal(ModalExample, {
+    onDismiss: (data: IReason, role: string) => dismiss(data, role),
+  });
+
+  function openModal() {
+    present({
+      onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => {
+        if (ev.detail.role === 'confirm') {
+          setForm((prevForm) => ({
+            ...prevForm,
+            reason: ev.detail.data,
+          }));
+        }
+      },
+      cssClass: "ion-sheet-modal",
+      initialBreakpoint: 0.5,
+      breakpoints: [0, 0.25, 0.5, 0.75],
+    });
+  };
+
   useEffect(() => {
+    setInit(true);
     if (!accordionGroup.current) {
       return;
     }
 
     accordionGroup.current.value = [];
+
+    return () => setInit(false);
   }, []);
+
+  useEffect(() => {
+    if (init) openModal();
+    // eslint-disable-next-line
+  }, [init]);
 
   return (
     <IonPage>
-      <IonModal
-        ref={modal}
-        isOpen={true}
-        trigger="open-modal"
-        className="ion-sheet-modal"
-        initialBreakpoint={0.5}
-        breakpoints={[0, 0.25, 0.5, 0.75]}
-      >
-        <IonContent className="ion-padding-top">
-          <IonList>
-            {reasonOptions.map(item => {
-              return (
-                <IonItem lines="none" key={item.id} button detail={false}>
-                  <IonIcon slot="start" icon={addCircleOutline} />
-                  <IonLabel>
-                    {item.label}
-                  </IonLabel>
-                </IonItem>
-              )
-            })}
-          </IonList>
-        </IonContent>
-      </IonModal>
-
       <IonHeader>
         <IonToolbar className="ion-no-padding">
           <IonButtons slot="end">
@@ -133,10 +116,10 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
         <IonText color="medium" className="ion-text-uppercase">
           <p className="group-label">Причина</p>
         </IonText>
-        <IonItem id="open-modal" shape="round" lines="none" button detail className="ion-margin-bottom">
-          <IonIcon slot="start" icon={addCircleOutline} />
+        <IonItem onClick={() => openModal()} shape="round" lines="none" button detail className="ion-margin-bottom">
+          <IonIcon slot="start" icon={form.reason?.icon} color={form.reason?.color} />
           <IonLabel>
-            Отпуск
+            {form.reason?.label}
           </IonLabel>
         </IonItem>
 
@@ -147,7 +130,7 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
           <IonAccordion value="first" toggleIcon="">
             <IonItem slot="header" className="ion-padding-start ion-padding-end">
               <IonIcon slot="start" icon={chooseDate} color="medium" />
-              <IonLabel>Дата начала</IonLabel>
+              <IonLabel color="medium">Дата начала</IonLabel>
             </IonItem>
             <div className="ion-padding-start ion-padding-end" slot="content">
               <IonDatetime presentation="date" />
@@ -156,7 +139,7 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
           <IonAccordion value="second" toggleIcon="">
             <IonItem slot="header" className="ion-padding-start ion-padding-end">
               <IonIcon slot="start" icon={chooseDate} color="medium" />
-              <IonLabel>Дата окончания</IonLabel>
+              <IonLabel color="medium">Дата окончания</IonLabel>
             </IonItem>
             <div className="ion-padding-start ion-padding-end" slot="content">
               <IonDatetime presentation="date" />
@@ -167,7 +150,7 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
         <IonText color="medium" className="ion-text-uppercase">
           <p className="group-label">Комментарий</p>
         </IonText>
-        <IonItem shape="round" lines="none">
+        <IonItem shape="round" lines="none" className="footer-space">
           <IonTextarea
             onIonChange={(e) => onChangeForm(e)}
             autoGrow={true}

@@ -16,13 +16,13 @@ import {
   useIonModal,
 } from "@ionic/react";
 import {
-  arrowBackOutline,
   homeOutline,
-  checkmarkOutline,
 } from "ionicons/icons";
 import { OverlayEventDetail } from "@ionic/react/dist/types/components/react-component-lib/interfaces";
 
-import closeModal from "../../assets/icons/close-modal.svg";
+import goBack from "../../assets/icons/go-back.svg";
+import requestApproved from "../../assets/icons/request-approved.svg";
+import requestDenied from "../../assets/icons/request-denied.svg";
 
 import RequestDetailsModal from "../../components/Modals/Requests/Details";
 
@@ -54,7 +54,7 @@ const Requests: React.FC = () => {
               defaultHref="/profile"
               text=""
               color="primary"
-              icon={arrowBackOutline}
+              icon={goBack}
             />
           </IonButtons>
           <h2 className="ion-no-margin ion-padding-start f-weight-700 text-24">Запросы</h2>
@@ -95,12 +95,12 @@ const Requests: React.FC = () => {
             <IonRow className="ion-align-items-center">
               <IonCol size="1" className="pl-0">
                 <IonIcon
-                  icon={checkmarkOutline}
+                  icon={requestApproved}
                   color="success"
-                  className="ion-margin-end"
+                  className="ion-margin-end requests-icons"
                 />
               </IonCol>
-              <IonCol size="11" className="d-flex ion-align-items-center">
+              <IonCol size="11" className="d-flex ion-align-items-center pl-0">
                 <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
               </IonCol>
             </IonRow>
@@ -127,12 +127,12 @@ const Requests: React.FC = () => {
             <IonRow className="ion-align-items-center">
               <IonCol size="1" className="pl-0">
                 <IonIcon
-                  icon={closeModal}
+                  icon={requestDenied}
                   color="danger"
-                  className="ion-margin-end"
+                  className="ion-margin-end requests-icons"
                 />
               </IonCol>
-              <IonCol size="11">
+              <IonCol size="11" className="pl-0">
                 <h2 className="f-weight-600 text-16">Сергей Антонов</h2>
               </IonCol>
             </IonRow>

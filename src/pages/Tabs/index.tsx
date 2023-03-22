@@ -46,7 +46,7 @@ const Tabs: React.FC = () => {
         </Route>
       </IonRouterOutlet>
 
-      <IonTabBar slot="bottom" onIonTabsDidChange={e => console.log(e)}>
+      <IonTabBar slot="bottom">
         <IonTabButton tab="main" href="/app/home">
           <IonIcon icon={homeFill} />
         </IonTabButton>

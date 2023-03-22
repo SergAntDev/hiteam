@@ -11,8 +11,11 @@ import {
   IonLabel,
   IonText,
   IonList,
+  IonIcon,
 } from "@ionic/react";
-import { arrowBackOutline } from "ionicons/icons";
+
+import goBack from "../../assets/icons/go-back.svg";
+import logout from "../../assets/icons/logout.svg";
 
 const Profile: React.FC = () => {
   return (
@@ -24,10 +27,13 @@ const Profile: React.FC = () => {
               defaultHref="/app/home"
               text=""
               color="primary"
-              icon={arrowBackOutline}
+              icon={goBack}
             />
           </IonButtons>
           <h2 className="ion-no-margin ion-padding-start f-weight-700 text-24">Профиль</h2>
+          <IonButton slot="end" fill="clear" color="medium" size="small">
+            <IonIcon slot="icon-only" icon={logout} />
+          </IonButton>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

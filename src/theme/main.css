@@ -30,10 +30,38 @@ ion-item[shape="round"] {
   border-radius: 16px;
 }
 
+ion-accordion-group ion-accordion {
+  --border-radius: 16px 16px 0 0;
+  border-radius: 16px 16px 0 0;
+}
+
+ion-accordion-group > ion-accordion:last-of-type {
+  --border-radius: 0 0 16px 16px;
+  border-radius: 0 0 16px 16px;
+}
+
 ion-accordion.accordion-expanding ion-item[slot="header"] ion-icon,
 ion-accordion.accordion-expanded ion-item[slot="header"] ion-icon {
   --color: var(--ion-color-primary);
   color: var(--ion-color-primary);
+}
+
+ion-accordion.accordion-expanding ion-item[slot="header"],
+ion-accordion.accordion-expanded ion-item[slot="header"] {
+  --border-width: 0px 0px 0.55px 0px !important;
+}
+
+ion-accordion ion-item .item-native {
+  padding-left: unset;
+  padding-right: unset;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+.sc-ion-textarea-ios-h,
+ion-textarea {
+  --placeholder-color: var(--ion-color-very-light);
+  --placeholder-opacity: 1;
 }
 
 .ion-color-white {
@@ -47,6 +75,15 @@ ion-accordion.accordion-expanded ion-item[slot="header"] ion-icon {
   --ion-color-contrast-rgb: var(--ion-color-dark-medium-contrast-rgb, 255, 255, 255) !important;
   --ion-color-shade: var(--ion-color-dark-medium-shade, #808289) !important;
   --ion-color-tint: var(--ion-color-dark-medium-tint, #9d9fa6) !important;
+}
+
+.ion-color-pink {
+  --ion-color-base: var(--ion-color-pink, #92949c) !important;
+  --ion-color-base-rgb: var(--ion-color-pink-rgb, 146, 148, 156) !important;
+  --ion-color-contrast: var(--ion-color-pink-contrast, #fff) !important;
+  --ion-color-contrast-rgb: var(--ion-color-pink-contrast-rgb, 255, 255, 255) !important;
+  --ion-color-shade: var(--ion-color-pink-shade, #808289) !important;
+  --ion-color-tint: var(--ion-color-pink-tint, #9d9fa6) !important;
 }
 
 .ion-color-very-light {
@@ -212,10 +249,23 @@ p {
   margin: 0 !important;
 }
 
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.footer-space {
+  margin-bottom: 80px;
+}
+
 .empty-content {
   margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.requests-icons {
+  display: flex;
+  font-size: 24px;
 }

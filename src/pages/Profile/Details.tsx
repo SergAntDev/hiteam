@@ -12,7 +12,8 @@ import {
   IonList,
   IonButton
 } from "@ionic/react";
-import { arrowBackOutline } from "ionicons/icons";
+
+import goBack from "../../assets/icons/go-back.svg";
 
 const ProfileDetails: React.FC = () => {
   return (
@@ -24,7 +25,7 @@ const ProfileDetails: React.FC = () => {
               defaultHref="/app/users"
               text=""
               color="primary"
-              icon={arrowBackOutline}
+              icon={goBack}
             />
           </IonButtons>
           <h2 className="ion-no-margin ion-padding-start f-weight-700 text-24">Профиль</h2>
