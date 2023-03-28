@@ -17,13 +17,18 @@ import {
   IonAccordion,
   IonDatetime,
   useIonModal,
+  DatetimeChangeEventDetail,
 } from "@ionic/react";
-import { IonTextareaCustomEvent, TextareaChangeEventDetail } from "@ionic/core";
+import { IonTextareaCustomEvent, TextareaChangeEventDetail, IonDatetimeCustomEvent } from "@ionic/core";
 import { OverlayEventDetail } from '@ionic/core/components';
+import { format } from "date-fns";
+import { ru } from "date-fns/esm/locale";
 
 import chooseDate from "../../../assets/icons/choose-date.svg";
 import closeModal from "../../../assets/icons/close-modal.svg";
 import vacation from "../../../assets/icons/reasons/vacation.svg";
+import openList from "../../../assets/icons/open-list.svg";
+
 import ModalExample, { IReason } from "./Reasons";
 
 export interface IModalData {
@@ -40,6 +45,10 @@ interface IProps {
 const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
   const accordionGroup = useRef<null | HTMLIonAccordionGroupElement>(null);
 
+  const currentDateFormat = format(new Date(), "yyyy-MM-dd", {
+    locale: ru,
+  });
+
   const [init, setInit] = useState<boolean>(false);
   const [form, setForm] = useState<IModalData>({
     reason: {
@@ -48,13 +57,13 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
       icon: vacation,
       color: "success"
     },
-    dateFrom: null,
-    dateTo: null,
+    dateFrom: currentDateFormat,
+    dateTo: currentDateFormat,
     comment: null,
   });
 
   const onChangeForm = (
-    e: IonTextareaCustomEvent<TextareaChangeEventDetail>
+    e: IonTextareaCustomEvent<TextareaChangeEventDetail> | IonDatetimeCustomEvent<DatetimeChangeEventDetail>
   ) => {
     setForm((prevForm) => ({
       ...prevForm,
@@ -116,7 +125,15 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
         <IonText color="medium" className="ion-text-uppercase">
           <p className="group-label">Причина</p>
         </IonText>
-        <IonItem onClick={() => openModal()} shape="round" lines="none" button detail className="ion-margin-bottom">
+        <IonItem
+          onClick={() => openModal()}
+          detailIcon={openList}
+          shape="round"
+          lines="none"
+          button
+          detail
+          className="ion-margin-bottom"
+        >
           <IonIcon slot="start" icon={form.reason?.icon} color={form.reason?.color} />
           <IonLabel>
             {form.reason?.label}
@@ -130,19 +147,29 @@ const RequestModal: React.FC<IProps> = ({ onDismiss }) => {
           <IonAccordion value="first" toggleIcon="">
             <IonItem slot="header" className="ion-padding-start ion-padding-end">
               <IonIcon slot="start" icon={chooseDate} color="medium" />
-              <IonLabel color="medium">Дата начала</IonLabel>
+              <IonLabel color="medium">{form.dateFrom}</IonLabel>
             </IonItem>
             <div className="ion-padding-start ion-padding-end" slot="content">
-              <IonDatetime presentation="date" />
+              <IonDatetime
+                onIonChange={(e) => onChangeForm(e)} min={currentDateFormat}
+                presentation="date"
+                value={form.dateFrom}
+                name="dateFrom"
+              />
             </div>
           </IonAccordion>
           <IonAccordion value="second" toggleIcon="">
             <IonItem slot="header" className="ion-padding-start ion-padding-end">
               <IonIcon slot="start" icon={chooseDate} color="medium" />
-              <IonLabel color="medium">Дата окончания</IonLabel>
+              <IonLabel color="medium">{form.dateTo}</IonLabel>
             </IonItem>
             <div className="ion-padding-start ion-padding-end" slot="content">
-              <IonDatetime presentation="date" />
+              <IonDatetime
+                onIonChange={(e) => onChangeForm(e)} min={currentDateFormat}
+                presentation="date"
+                value={form.dateTo}
+                name="dateTo"
+              />
             </div>
           </IonAccordion>
         </IonAccordionGroup>

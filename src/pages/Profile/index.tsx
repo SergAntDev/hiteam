@@ -12,12 +12,25 @@ import {
   IonText,
   IonList,
   IonIcon,
+  useIonActionSheet,
+  useIonRouter,
 } from "@ionic/react";
 
 import goBack from "../../assets/icons/go-back.svg";
 import logout from "../../assets/icons/logout.svg";
+import openList from "../../assets/icons/open-list.svg";
 
 const Profile: React.FC = () => {
+  const navigation = useIonRouter();
+
+  const [present] = useIonActionSheet();
+
+  const onDidDismiss = (detail: any) => {
+    if (detail.role === "confirm") {
+      navigation.push("/", "root", "replace");
+    }
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -31,7 +44,32 @@ const Profile: React.FC = () => {
             />
           </IonButtons>
           <h2 className="ion-no-margin ion-padding-start f-weight-700 text-24">Профиль</h2>
-          <IonButton slot="end" fill="clear" color="medium" size="small">
+          <IonButton
+            onClick={() =>
+              present({
+                header: 'Выйти из аккаунта',
+                subHeader: 'Вы уверены, что хотите выйти из аккаунта?',
+                buttons: [
+                  {
+                    text: 'Выйти',
+                    role: 'confirm',
+                  },
+                  {
+                    text: 'Отмена',
+                    role: 'cancel',
+                    data: {
+                      action: 'cancel',
+                    },
+                  },
+                ],
+                onDidDismiss: ({ detail }) => onDidDismiss(detail),
+              })
+            }
+            slot="end"
+            fill="clear"
+            color="medium"
+            size="small"
+          >
             <IonIcon slot="icon-only" icon={logout} />
           </IonButton>
         </IonToolbar>
@@ -51,7 +89,7 @@ const Profile: React.FC = () => {
             </IonText>
           </IonLabel>
         </IonItem>
-        <IonItem routerLink="/requests" lines="full">
+        <IonItem detailIcon={openList} routerLink="/requests" lines="full">
           <IonText color="primary">
             <p className="f-weight-600">Все запросы</p>
           </IonText>
